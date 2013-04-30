@@ -4,9 +4,15 @@ Plugin Name: Gaia Freshmuse Slash and Burn
 Plugin URI: http://freshmuse.com
 Description: 
 Author: Dan Beil and Grant Landram
-Version: Super beta 0.1
+Version: Super beta 0.2
 Author URI: http://gaiarendering.com
 Change Log:
+
+Beta 0.1
+- proof of concept
+
+Beta 0.2
+- creation of /inc and appropirate files
 */
 ?>
 <?php
@@ -36,11 +42,12 @@ function gaia_sab_submenu_page_callback() {
 <?php
 add_action('plugins_loaded', 'gaia_fire');
 function gaia_fire() {
-  if(current_user_can('administrator'))
+  if(!current_user_can('administrator')) {
   add_action('wp_dashboard_setup', 'remove_dashboard_widgets', 99);
   add_action('admin_menu', 'remove_menu_pages', 99);
   add_action('widgets_init', 'remove_core_widgets', 99);
   add_action('admin_init', 'remove_meta_boxes', 99);
+};
 }
 ?>
 <?php
@@ -64,59 +71,26 @@ function remove_meta_boxes() {
   require_once dirname (__FILE__) . '/inc/remove-meta-boxes.php' ;
 };
 
-
 function theme_custom_login() {
-	$gaia_sab_options = get_option('gaia_sab_options');
-	echo '<style type="text/css">';
-	if (!empty($gaia_sab_options["login_color"])) {
-	echo 'body.login {
-		background-color:' . $gaia_sab_options["login_color"] .';
-	}';
-	};
-	if (!empty($gaia_sab_options["login_image"])) {
-	echo 'body.login {
-		background-image:url("' . $gaia_sab_options["login_image"] .'");
-	}';
-	};
-	if (!empty($gaia_sab_options["login_image_position"])){
-	echo 'body.login {
-		background-position:' . $gaia_sab_options["login_image_position"] .';
-	}';
-	};
-	if (!empty($gaia_sab_options["login_image_repeat"])) {
-	echo 'body.login {
-		background-repeat:' . $gaia_sab_options["login_image_repeat"] .';
-	}';
-	};
-	if (!empty($gaia_sab_options["login_logo"])) {
-	echo '.login h1 a {
-		background-image:url("' . $gaia_sab_options["login_logo"] .'");
-	}';
-	};
-		echo '</style>';
-		};
+	require_once dirname (__FILE__) . '/inc/theme-custom-login.php' ;
+};
 add_action('login_head', 'theme_custom_login');
+
 function sab_url_login() {
 	return '/';
 };
 add_action('login_headerurl', 'sab_url_login');
 
 function admin_styles2() {
-	$gaia_sab_options = get_option('gaia_sab_options');
-	$gaia_sab_logo = $gaia_sab_options["admin_logo"];
-	if (!empty($gaia_sab_logo)) {
-	echo '<style type="text/css">
-	#wp-admin-bar-wp-logo .ab-icon {
-		background-image:url("'.$gaia_sab_options["admin_logo"].'") !important;
-	}
-		</style>';
-		};
+	require_once dirname (__FILE__) . '/inc/login-logo.php' ;
 };
 add_action('admin_head', 'admin_styles2'); //Thanks John Hawkins!
 
 function modify_footer_admin() {
-	$gaia_sab_options = get_option('gaia_sab_options');
-	echo $gaia_sab_options['admin_footer'];
+	require_once dirname (__FILE__) . '/inc/admin-footer-mod.php' ;
 };
+$gaia_sab_options = get_option('gaia_sab_options');
+if (!empty($gaia_sab_options['admin_footer'])) {
 add_action('admin_footer_text', 'modify_footer_admin');
+};
 ?>

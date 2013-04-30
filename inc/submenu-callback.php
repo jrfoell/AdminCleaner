@@ -7,6 +7,21 @@
   <form method="post" action="options.php">
     <?php settings_fields('gaia_sab_options'); ?>
     <?php $gaia_sab_options = get_option('gaia_sab_options'); ?>
+    <!--<table>
+      <tr>
+        <th>Minimum User Level to change these settings</th>
+        <td><select name="gaia_sab_options[level]">
+            <?php $gaia_level = $gaia_sab_options['level'];?>
+            <option value="administrator" <?php if ($gaia_level == 'administrator') { echo 'selected="selected"'; } ?>>administrator</option>
+            <option value="editor" <?php if ($gaia_level =='editor') { echo 'selected="selected"'; } ?>>editor</option>
+            <option value="author" <?php if ($gaia_level =='author') { echo 'selected="selected"'; } ?>>author</option>
+            <option value="contributor" <?php if ($gaia_level =='contributor') { echo 'selected="selected"'; } ?>>contributor</option>
+            <option value="subscriber" <?php if ($gaia_level =='subscriber') { echo 'selected="selected"'; } ?>>subscriber</option>
+          </select>
+          <?php echo $gaia_level; ?>
+        </td>
+      </tr>
+    </table>-->
     <h2 class="form-table-dashboard gaiasab">Dashboard</h2>
     <table class="form-table-dashboard gaiasab">
       <tr valign="top">
