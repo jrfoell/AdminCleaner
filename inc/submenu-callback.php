@@ -9,7 +9,7 @@
     <?php $gaia_sab_options = get_option('gaia_sab_options'); ?>
     <table>
       <tr>
-        <th>Minimum User Level to change these settings</th>
+        <th>All users below this level will be effected</th>
         <td><select name="gaia_sab_options[level]">
             <?php $gaia_level = $gaia_sab_options['level'];?>
             <option value="administrator" <?php if ($gaia_level == 'administrator') { echo 'selected="selected"'; } ?>>administrator</option>
