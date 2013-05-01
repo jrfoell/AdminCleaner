@@ -18,7 +18,7 @@
             <option value="contributor" <?php if ($gaia_level =='contributor') { echo 'selected="selected"'; } ?>>contributor</option>
             <option value="subscriber" <?php if ($gaia_level =='subscriber') { echo 'selected="selected"'; } ?>>subscriber</option>
           </select>
-          <?php echo $gaia_level; ?>
+          <?php echo 'Currently selected level is: ' . $gaia_level; ?>
         </td>
       </tr>
     </table>

@@ -59,7 +59,7 @@ function gaia_fire() {
 	};
 };
 	?>
-	<?php
+<?php
 // start our functions
 	function remove_dashboard_widgets() {
 		require_once SABPATH . '/inc/remove-dashboard-widgets.php' ;
