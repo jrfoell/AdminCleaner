@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Gaia Freshmuse Slash and Burn
+Plugin Name: Admin Cleaner
 Plugin URI: http://freshmuse.com
-Description: This plugin allows you to hide default wordpress admin items such as left nav menu items, default widgets, dashboard items, etc... It also has some options to customize the login screen and backend with your own logo and admin footer text.  It creates an option page under settings > Slash and Burn Options.  Options must be saved upon initial install.
+Description: This plugin allows you to hide default wordpress admin items such as left nav menu items, default widgets, dashboard items, etc... It also has some options to customize the login screen and backend with your own logo and admin footer text.  It creates an option page under settings > Slash and Burn Options.  Options must be saved upon initial install.  Joint development buy Dan Beil (Gaia Rendering) and Grant Landram (Fresh Muse).
 Author: Dan Beil and Grant Landram
-Version: Super beta 0.3
+Version: 1
 Author URI: http://gaiarendering.com
 Change Log:
 
@@ -16,13 +16,23 @@ Beta 0.2
 
 Beta 0.3
 - added user level functionality
+
+v1
+- Changed name to Admin Cleaner and updated links
+- Changed line 98 function sab_url_login() {
+		return '/';
+	};
+	to
+	function sab_url_login() {
+		return home_url();
+	};
 */
 ?>
 <?php
 define('SABPATH',   plugin_dir_path(__FILE__));
 function gaia_sab_css() {
 	wp_enqueue_script('sab_js', plugins_url('/js/sab_js.js', __FILE__), 'jquery', '', '');
-	wp_register_style( 'gaia_sab_styles', plugins_url('/css/slash-and-burn.css', __FILE__), array(), '1' );
+	wp_register_style( 'gaia_sab_styles', plugins_url('/css/admincleaner.css', __FILE__), array(), '1' );
 	wp_enqueue_style('gaia_sab_styles');
 };
 add_action('admin_enqueue_scripts', 'gaia_sab_css');
@@ -30,7 +40,7 @@ add_action('admin_enqueue_scripts', 'gaia_sab_css');
 add_action('admin_menu', 'gaia_sab_submenu_page');
 
 function gaia_sab_submenu_page() {
-	add_submenu_page( 'options-general.php', 'Slash and Burn Options', 'Slash and Burn Options', 'manage_options', 'gaia-sab-submenu-page', 'gaia_sab_submenu_page_callback' ); 
+	add_submenu_page( 'options-general.php', 'Admin Cleaner Options', 'Admin Cleaner Options', 'manage_options', 'gaia-sab-submenu-page', 'gaia_sab_submenu_page_callback' ); 
 }
 //http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/
 function gaia_sab_init(){
@@ -86,7 +96,7 @@ function gaia_fire() {
 	add_action('login_head', 'theme_custom_login');
 
 	function sab_url_login() {
-		return '/';
+		return home_url();
 	};
 	add_action('login_headerurl', 'sab_url_login');
 
