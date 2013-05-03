@@ -127,8 +127,8 @@
         <th scope="row">Menus</th>
         <td><select name="gaia_sab_options[nav_menu]">
             <?php $gaia_nav_menus = $gaia_sab_options['nav_menu'];?>
-            <option value="show" <?php if ($gaia_nav_menu == 'show') { echo 'selected="selected"'; } ?>>Show</option>
-            <option value="hide" <?php if ($gaia_nav_menu =='hide') { echo 'selected="selected"'; } ?>>Hide</option>
+            <option value="show" <?php if ($gaia_nav_menus == 'show') { echo 'selected="selected"'; } ?>>Show</option>
+            <option value="hide" <?php if ($gaia_nav_menus =='hide') { echo 'selected="selected"'; } ?>>Hide</option>
           </select></td>
       </tr>
       <tr valign="top">
