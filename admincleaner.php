@@ -2,7 +2,7 @@
 /*
 Plugin Name: Admin Cleaner
 Plugin URI: http://freshmuse.com
-Description: This plugin allows you to hide default wordpress admin items such as left nav menu items, default widgets, dashboard items, etc... It also has some options to customize the login screen and backend with your own logo and admin footer text.  It creates an option page under settings > Slash and Burn Options.  Options must be saved upon initial install.  Joint development buy Dan Beil (Gaia Rendering) and Grant Landram (Fresh Muse).
+Description: This plugin allows you to hide default wordpress admin items such as left nav menu items, default widgets, dashboard items, etc... It also has some options to customize the login screen and backend with your own logo and admin footer text.  It creates an option page under settings > Admin Cleaner Options.  Options must be saved upon initial install.  Joint development buy Dan Beil (Gaia Rendering) and Grant Landram (Fresh Muse).
 Author: Dan Beil and Grant Landram
 Version: 1
 Author URI: http://gaiarendering.com
