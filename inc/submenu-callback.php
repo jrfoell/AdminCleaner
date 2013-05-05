@@ -1,6 +1,5 @@
 <div class="wrap">
-  <h3>Gaia Slash and Burn Options</h3>
-  <h2>Gaia / Freshmuse Slash and Burn Options</h2>
+  <h2>Admin Cleaner Options</h2>
   <small>Cleaning up the WordPress backend one item at a time since 2013<br />
   Click on a heading to show its' options<br />
   Options must be saved after initial install to take effect</small>
