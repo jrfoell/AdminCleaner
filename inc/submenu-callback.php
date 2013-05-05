@@ -301,8 +301,16 @@
     <h2 class="form-table-css gaiasab">Custom CSS</h2>
     <table class="form-table-css gaiasab">
       <tr scope="row">
-        <th>Login Logo (326 x 67px)</th>
+        <th>Login Logo (326 x 67px is the default)</th>
         <td><input type="text" name="gaia_sab_options[login_logo]" value="<?php echo $gaia_sab_options['login_logo']; ?>" /></td>
+      </tr>
+      <tr scope="row">
+        <th>Login Logo Width (with 'px'</th>
+        <td><input type="text" name="gaia_sab_options[login_logo_w]" value="<?php echo $gaia_sab_options['login_logo_w']; ?>" /></td>
+      </tr>
+      <tr scope="row">
+        <th>Login Logo Height (with 'px')</th>
+        <td><input type="text" name="gaia_sab_options[login_logo_h]" value="<?php echo $gaia_sab_options['login_logo_h']; ?>" /></td>
       </tr>
       <tr valign="top">
         <th>Login Background Color HEX key with '#'</th>

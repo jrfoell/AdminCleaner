@@ -26,5 +26,15 @@ $gaia_sab_options = get_option('gaia_sab_options');
 		background-image:url("' . $gaia_sab_options["login_logo"] .'");
 	}';
 	};
+	if (!empty($gaia_sab_options["login_logo_w"])) {
+	echo '.login h1 a {
+		width:'. $gaia_sab_options['login_logo_w'] .';
+	}';
+	};
+	if (!empty($gaia_sab_options["login_logo_h"])) {
+	echo '.login h1 a {
+		height:'. $gaia_sab_options['login_logo_h'] .';
+	}';
+	};
 	echo '</style>';
 ?>
