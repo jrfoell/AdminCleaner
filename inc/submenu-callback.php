@@ -344,6 +344,26 @@
         <th>Admin Footer Text (No HTML)</th>
         <td><textarea name="gaia_sab_options[admin_footer]"><?php echo $gaia_sab_options['admin_footer']; ?></textarea></td>
       </tr>
+      <tr valign="top">
+        <th>Admin Menu Backgound Color (HEX code with #)</th>
+        <td><input type="text" name="gaia_sab_options[admin_menu_back]" value="<?php echo $gaia_sab_options['admin_menu_back']; ?>" /></td>
+      </tr>
+      <tr valign="top">
+        <th>Admin Menu Link Color (HEX code with #)</th>
+        <td><input type="text" name="gaia_sab_options[admin_menu_link]" value="<?php echo $gaia_sab_options['admin_menu_link']; ?>" /></td>
+      </tr>
+      <tr valign="top">
+        <th>Admin Menu Link Hover Color (HEX code with #)</th>
+        <td><input type="text" name="gaia_sab_options[admin_menu_hover]" value="<?php echo $gaia_sab_options['admin_menu_hover']; ?>" /></td>
+      </tr>
+      <tr valign="top">
+        <th>Admin Menu Border Top Color (HEX code with #)</th>
+        <td><input type="text" name="gaia_sab_options[admin_menu_border_top]" value="<?php echo $gaia_sab_options['admin_menu_border_top']; ?>" /></td>
+      </tr>
+      <tr valign="top">
+        <th>Admin Menu Border Bottom Color (HEX code with #)</th>
+        <td><input type="text" name="gaia_sab_options[admin_menu_border_bottom]" value="<?php echo $gaia_sab_options['admin_menu_border_bottom']; ?>" /></td>
+      </tr>
     </table>
     <p class="submit">            
       <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
