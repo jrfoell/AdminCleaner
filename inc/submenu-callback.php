@@ -20,6 +20,16 @@
           <?php echo 'Currently selected level is: ' . $gaia_level; ?>
         </td>
       </tr>
+      <tr>
+        <th>Give Editors Access to the 'Appearance' Menu?</th>
+        <td><select name="gaia_sab_options[editor]">
+            <?php $gaia_editor = $gaia_sab_options['editor'];?>
+            <option value="no" <?php if ($gaia_editor == 'no') { echo 'selected="selected"'; } ?>>No</option>
+            <option value="yes" <?php if ($gaia_editor =='yes') { echo 'selected="selected"'; } ?>>Yes</option>
+          </select>
+          <?php echo 'Currently selection is: ' . $gaia_editor; ?>
+        </td>
+      </tr>
     </table>
     <h2 class="form-table-dashboard gaiasab">Dashboard</h2>
     <table class="form-table-dashboard gaiasab">
@@ -115,7 +125,7 @@
           </select></td>
       </tr>
       <tr valign="top">
-        <th scope="row">Themes</th>
+        <th scope="row">Appearance > Themes</th>
         <td><select name="gaia_sab_options[themes]">
             <?php $gaia_themes = $gaia_sab_options['themes'];?>
             <option value="show" <?php if ($gaia_themes == 'show') { echo 'selected="selected"'; } ?>>Show</option>
@@ -123,7 +133,7 @@
           </select></td>
       </tr>
       <tr valign="top">
-        <th scope="row">Menus</th>
+        <th scope="row">Appearance > Menus</th>
         <td><select name="gaia_sab_options[nav_menu]">
             <?php $gaia_nav_menus = $gaia_sab_options['nav_menu'];?>
             <option value="show" <?php if ($gaia_nav_menus == 'show') { echo 'selected="selected"'; } ?>>Show</option>

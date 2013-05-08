@@ -72,6 +72,10 @@ function gaia_fire() {
 };
 	?>
 <?php
+function editor_level() {
+		require_once SABPATH . '/inc/editor-level.php' ;
+	};
+add_action('admin_init', 'editor_level');
 // start our functions
 	function remove_dashboard_widgets() {
 		require_once SABPATH . '/inc/remove-dashboard-widgets.php' ;
