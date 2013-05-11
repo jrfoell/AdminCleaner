@@ -1,1 +1,0 @@
-require_once dirname (__FILE__) . '/inc/submenu-page-callback.php' ;
