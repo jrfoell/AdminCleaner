@@ -6,6 +6,7 @@ Description: This plugin allows you to hide default wordpress admin items such a
 Author: Dan Beil and Grant Landram
 Version: 1.0.1
 Author URI: http://gaiarendering.com
+License: GPL2
 Change Log:
 
 Beta 0.1
