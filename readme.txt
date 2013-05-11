@@ -1,4 +1,4 @@
-=== Admin Cleaner ===
+=== Awesome Admin Cleaner ===
 Contributors: dan-gaia, grantlandram
 Donate link: http://www.gaiarendering.com/buy-me-a-beer
 Tags: Admin Menu, Customize Login Logo, Hide Admin Menu Items, Brand Admin, Branding, Remove Widgets
