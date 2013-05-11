@@ -10,7 +10,7 @@ Admin Cleaner allows you to hide admin menu items and restyle the login screen a
 
 == Description ==
 
-Generally speaking this plugin is intended for developers who make sites for clients though most intermediate 
+Generally speaking this plugin is intended for developers who make sites for clients though most intermediate users will be able to set it up as well
 
 Admin Cleaner allows you to hide / remove admin menu items such as Comments, Links, Dashboard, etc...from users that have no need to see these items.  You can also remove any of the default widgets that may just be taking up space.
 
