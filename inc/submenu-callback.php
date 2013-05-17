@@ -314,7 +314,7 @@
         <td><input type="text" name="gaia_sab_options[login_logo]" value="<?php echo $gaia_sab_options['login_logo']; ?>" /></td>
       </tr>
       <tr scope="row">
-        <th>Login Logo Width (with 'px'</th>
+        <th>Login Logo Width (with 'px')</th>
         <td><input type="text" name="gaia_sab_options[login_logo_w]" value="<?php echo $gaia_sab_options['login_logo_w']; ?>" /></td>
       </tr>
       <tr scope="row">

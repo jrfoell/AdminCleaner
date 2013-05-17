@@ -24,11 +24,19 @@ $gaia_sab_options = get_option('gaia_sab_options');
 	if (!empty($gaia_sab_options["login_logo"])) {
 	echo '.login h1 a {
 		background-image:url("' . $gaia_sab_options["login_logo"] .'");
+		background-size:100%;
 	}';
 	};
 	if (!empty($gaia_sab_options["login_logo_w"])) {
 	echo '.login h1 a {
 		width:'. $gaia_sab_options['login_logo_w'] .';
+	}';
+	};
+	$w_clean = str_replace('px', '', $gaia_sab_options["login_logo_w"]);
+	if ($w_clean > 320) {
+		$n_marg = ($w_clean - 320)/2;
+	echo '.login h1 a {
+		margin-left: -'. $n_marg .'px;
 	}';
 	};
 	if (!empty($gaia_sab_options["login_logo_h"])) {

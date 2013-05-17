@@ -2,37 +2,14 @@
 /*
 Plugin Name: Awesome Admin Cleaner
 Plugin URI: http://freshmuse.com
-Description: This plugin allows you to hide default wordpress admin items such as left nav menu items, default widgets, dashboard items, etc... It also has some options to customize the login screen and backend with your own logo and admin footer text.  It creates an option page under settings > Admin Cleaner Options.  Options must be saved upon initial install.  Joint development buy Dan Beil (Gaia Rendering) and Grant Landram (Fresh Muse).
+Description: This plugin allows you to hide default wordpress admin items such as left nav menu items, default widgets, dashboard items, etc... It also has some options to customize the login screen and backend with your own logo and admin footer text.  It creates an option page under settings > Admin Cleaner Options.  Options must be saved upon initial install.  Plugin development by Dan Beil (Gaia Rendering), actions and code snippents from Grant Landram (Fresh Muse).
 Author: Dan Beil and Grant Landram
-Version: 1.0.1
+Version: 1.0.3
 Author URI: http://gaiarendering.com
 License: GPL2
-Change Log:
-
-Beta 0.1
-- proof of concept
-
-Beta 0.2
-- creation of /inc and appropirate files
-
-Beta 0.3
-- added user level functionality
-
-v1
-- Changed name to Admin Cleaner and updated links
-- Changed line 98 function sab_url_login() {
-		return '/';
-	};
-	to
-	function sab_url_login() {
-		return home_url();
-	};
-v1.0.1
-- Added login logo height and width
 */
 ?>
 <?php
-define('SABPATH',   plugin_dir_path(__FILE__));
 function gaia_sab_css() {
 	wp_enqueue_script('sab_js', plugins_url('/js/sab_js.js', __FILE__), 'jquery', '', '');
 	wp_register_style( 'gaia_sab_styles', plugins_url('/css/admincleaner.css', __FILE__), array(), '1' );
@@ -52,7 +29,7 @@ function gaia_sab_init(){
 add_action( 'admin_init', 'gaia_sab_init' );
 
 function gaia_sab_submenu_page_callback() {
-	require_once SABPATH . '/inc/submenu-callback.php' ;
+	include('inc/submenu-callback.php') ;
 };
 //end setting page
 ?>
@@ -62,43 +39,43 @@ function gaia_fire() {
 	$gaia_sab_options = get_option('gaia_sab_options');
 	$gaia_level = $gaia_sab_options['level'];
 	if ($gaia_level == 'administrator') {
-		include SABPATH . '/inc/is-admin.php' ;
+		include ('inc/is-admin.php') ;
 	} elseif ($gaia_level == 'editor') {
-		include SABPATH . '/inc/is-editor.php' ;
+		include ('inc/is-editor.php') ;
 	} elseif ($gaia_level == 'author') {
-		include SABPATH . '/inc/is-author.php' ;
+		include ('inc/is-author.php') ;
 	} elseif ($gaia_level == 'contributor') {
-		include SABPATH . '/inc/is-contributor.php' ;
+		include ('inc/is-contributor.php') ;
 	};
 };
 	?>
 <?php
 function editor_level() {
-		require_once SABPATH . '/inc/editor-level.php' ;
+		include ('inc/editor-level.php') ;
 	};
 add_action('admin_init', 'editor_level');
 // start our functions
 	function remove_dashboard_widgets() {
-		require_once SABPATH . '/inc/remove-dashboard-widgets.php' ;
+		require_once ('inc/remove-dashboard-widgets.php') ;
 	};
 
 // start our functions
 	function remove_menu_pages() {
-		require_once SABPATH . '/inc/remove-menu-pages.php' ;
+		require_once ('inc/remove-menu-pages.php') ;
 	};
 
 //start our function
 	function remove_core_widgets() {
-		require_once SABPATH . '/inc/remove-core-widgets.php' ;
+		require_once ('inc/remove-core-widgets.php') ;
 	};
 
 
 	function remove_meta_boxes() {
-		require_once SABPATH . '/inc/remove-meta-boxes.php' ;
+		require_once ('inc/remove-meta-boxes.php') ;
 	};
 
 	function theme_custom_login() {
-		require_once SABPATH . '/inc/theme-custom-login.php' ;
+		require_once ('inc/theme-custom-login.php') ;
 	};
 	add_action('login_head', 'theme_custom_login');
 
@@ -108,12 +85,12 @@ add_action('admin_init', 'editor_level');
 	add_action('login_headerurl', 'sab_url_login');
 
 	function admin_styles2() {
-		require_once SABPATH . '/inc/login-logo.php' ;
+		require_once ('inc/login-logo.php') ;
 	};
 add_action('admin_head', 'admin_styles2'); //Thanks John Hawkins!
 
 function modify_footer_admin() {
-	require_once SABPATH . '/inc/admin-footer-mod.php' ;
+	require_once ('inc/admin-footer-mod.php') ;
 };
 $gaia_sab_options = get_option('gaia_sab_options');
 if (!empty($gaia_sab_options['admin_footer'])) {

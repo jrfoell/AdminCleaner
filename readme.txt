@@ -3,8 +3,8 @@ Contributors: dan-gaia, grantlandram
 Donate link: http://www.gaiarendering.com/buy-me-a-beer
 Tags: Admin Menu, Customize Login Logo, Hide Admin Menu Items, Brand Admin, Branding, Remove Widgets
 Requires at least: 3.0
-Tested up to: 3.5.2
-Stable tag: 1.0.1
+Tested up to: 3.5.1
+Stable tag: 1.0.3
  
 Admin Cleaner allows you to hide admin menu items and restyle the login screen and admin menu colors
 
@@ -45,3 +45,20 @@ Yep. to do this simply make sure all options are set to 'Show' and fill out the 
 
 = 1.0.1 =
 * Initial Release
+
+= 1.0.2 =
+* Changed name to Admin Cleaner and updated links
+* Changed line 98 function sab_url_login() {
+		return '/';
+	};
+	to
+	function sab_url_login() {
+		return home_url();
+	};
+* Added login logo height and width
+
+= 1.0.2 =
+* file include location fix
+
+= 1.0.3 =
+* added support for login logos wider than 320px
