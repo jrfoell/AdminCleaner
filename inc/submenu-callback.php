@@ -1,4 +1,4 @@
-<div class="wrap">
+<div class="aac-wrap">
   <h2>Admin Cleaner Options</h2>
   <small>Cleaning up the WordPress backend one item at a time since 2013<br />
   Click on a heading to show its' options<br />

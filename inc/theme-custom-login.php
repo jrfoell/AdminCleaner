@@ -30,13 +30,31 @@ $gaia_sab_options = get_option('gaia_sab_options');
 	if (!empty($gaia_sab_options["login_logo_w"])) {
 	echo '.login h1 a {
 		width:'. $gaia_sab_options['login_logo_w'] .';
+		margin-left: 8px;
 	}';
 	};
 	$w_clean = str_replace('px', '', $gaia_sab_options["login_logo_w"]);
-	if ($w_clean > 320) {
-		$n_marg = ($w_clean - 320)/2;
+	if ($w_clean < 312) {
+		echo '.login h1 a {
+		margin: 0 auto;
+	}
+	.login form {
+		margin-left: 0px;
+	}';
+	} elseif ($w_clean === 312) {
 	echo '.login h1 a {
-		margin-left: -'. $n_marg .'px;
+		margin-left: 0px;
+	}
+	.login form {
+		margin-left: 0px;
+	}';
+	} elseif ($w_clean > 312) {
+		$n_marg = ($w_clean-312)/2;
+		echo '.login h1 a {
+		margin-left: -' . $n_marg . 'px;
+	}
+	.login form {
+		margin-left: 0px;
 	}';
 	};
 	if (!empty($gaia_sab_options["login_logo_h"])) {
